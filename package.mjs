@@ -9,17 +9,17 @@ import { APP_VERSION } from './core.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const FILES = [
-  'README.md', 'README.en.md', 'package.json', '.env.example', '启动论证工坊.command', '启动论证工坊.bat',
+  'package.json', '.env.example', '启动论证工坊.command', '启动论证工坊.bat',
   'index.html', 'styles.css', 'favicon.svg',
   'app.mjs', 'core.mjs', 'html.mjs', 'i18n.mjs', 'api.mjs', 'diff.mjs', 'report.mjs', 'teacher.mjs',
   'engine.mjs', 'sha256.mjs',
   'server.mjs', 'env.mjs', 'provider.mjs', 'mock.mjs', 'orchestrator.mjs', 'prompts.mjs', 'guard.mjs',
   'setup.mjs', 'check.mjs', 'package.mjs', 'build-site.mjs', '.gitignore'
 ];
-const DIRECTORIES = ['tests', 'demo', 'eval', 'docs', 'release', 'screenshots', 'worker'];
+const DIRECTORIES = ['tests', 'demo', 'eval', 'release', 'screenshots', 'worker'];
 const ALLOWED_EXTENSIONS = /\.(mjs|js|json|md|txt|html|css|svg|png|jpg|csv|toml)$/i;
-// .env.example is documentation and is explicitly allowed; every other .env form is excluded.
-const FORBIDDEN = /(^|[\\/])(\.env(?!\.example$)(\..*)?|node_modules|dist|\.DS_Store)$|backup/i;
+// .env.example is allowed; every other .env form, build output, deps, and generated eval results are not.
+const FORBIDDEN = /(^|[\\/])(\.env(?!\.example$)(\..*)?|node_modules|dist|\.DS_Store)$|backup|(^|[\\/])eval[\\/]results[\\/]/i;
 const SECRET = /\bsk-[A-Za-z0-9]{20,}\b/;
 
 async function walk(dir) {
