@@ -1,0 +1,53 @@
+{
+  "kind": "argumentor-task",
+  "version": 1,
+  "title": "Unit 5 · AI monitoring in the workplace",
+  "topic": "Should employers be allowed to use AI systems to monitor employees' work?",
+  "audience": "The management board and staff representatives of a mid-sized logistics company",
+  "lockTopic": true,
+  "instructions": "Write an argumentative essay of 300–450 words for the audience above. Take a clear position, support it with at least two reasons, and answer the strongest objection. Use the source pack for checkable evidence and cite sources as S1–S3.",
+  "requirements": [
+    "At least two reasons, each with evidence and a warrant",
+    "At least one counterargument with a response",
+    "Cite at least one source from the pack (S1–S3)",
+    "Disclose any AI use in your AI-use statement"
+  ],
+  "wordMin": 300,
+  "wordMax": 450,
+  "level": "B2",
+  "focus": ["evidence", "warrant", "counterargument"],
+  "languageFocus": "stance",
+  "minDialogue": 2,
+  "aiUse": "argumentor-only",
+  "reflectionLanguage": "either",
+  "vocabulary": [
+    ["employee monitoring", "员工监控", "Collecting information about how employees work."],
+    ["algorithmic management", "算法管理", "Using software to assign, track or evaluate work."],
+    ["productivity tracking", "生产效率追踪", "Measuring output, speed or activity."],
+    ["proportionality", "相称性原则", "Monitoring should not go further than its purpose needs."],
+    ["data minimisation", "数据最小化", "Collecting only the data that is necessary."],
+    ["purpose limitation", "目的限制", "Data collected for one purpose should not be reused for unrelated purposes."],
+    ["transparency", "透明度", "Employees know what is collected and why."],
+    ["false positive", "误判", "A system wrongly flags normal behaviour as a problem."],
+    ["human review", "人工复核", "A person checks an automated decision before action is taken."],
+    ["workplace trust", "职场信任", "Confidence between employees and managers."]
+  ],
+  "sources": [
+    {
+      "title": "Case A: Idle-time scores at Northline Logistics",
+      "kind": "Teacher-written fictional case",
+      "text": "Northline Logistics introduced an AI system that records each warehouse worker's scanning speed and the time between tasks. Managers receive a daily idle-time score for every worker. In the first month, the system flagged workers who stopped to help a colleague as idle. After a staff meeting, the company changed the rule: scores are now reviewed by a supervisor before any action is taken, and workers can see their own data. Forklift accidents fell during the same period, which the safety manager links to the system's alerts about speeding vehicles."
+    },
+    {
+      "title": "Case B: Screenshot monitoring at a design studio",
+      "kind": "Teacher-written fictional case",
+      "text": "A small design studio installed software that takes a screenshot of each employee's screen every ten minutes and uses AI to label the activity as productive or unproductive. The software labelled time spent sketching on paper as unproductive because the screen did not change. Two senior designers said they felt treated like suspects and left the studio within six months. The owner said the data helped her bill clients more accurately."
+    },
+    {
+      "title": "Teacher's note: principles in data-protection rules",
+      "kind": "Teacher summary of general principles (not a legal text)",
+      "text": "Many data-protection frameworks, including the EU's General Data Protection Regulation, include principles such as purpose limitation (data collected for one purpose should not be reused for unrelated purposes) and data minimisation (collect only what is necessary). Workplace guidance in several countries also stresses transparency: employees should be told what is monitored and why. These principles do not ban monitoring; they set conditions on it."
+    }
+  ],
+  "teacherNote": "Cases A and B are fictional and were written for this unit. You may argue for or against workplace monitoring; both positions can be equally strong if they are well reasoned."
+}
