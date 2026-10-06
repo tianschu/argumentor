@@ -1,0 +1,16 @@
+# Never commit a key. The real config lives outside this folder (see README).
+.env
+.env.*
+!.env.example
+*.old
+
+# Build output
+dist/
+site/
+
+# Local data and noise
+node_modules/
+.DS_Store
+eval/results/*.json
+eval/results/*.md
+!eval/results/.gitkeep

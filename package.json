@@ -1,0 +1,22 @@
+{
+  "name": "argumentor-writing-studio",
+  "version": "4.0.0",
+  "description": "ArguMentor 论证工坊: a multi-agent Socratic coach for English argumentative writing (EFL), with an integrity guard and teacher tools.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "start:offline": "node server.mjs --offline",
+    "setup": "node setup.mjs",
+    "check": "node check.mjs",
+    "test": "node --test",
+    "eval": "node eval/run-eval.mjs",
+    "eval:offline": "node eval/run-eval.mjs --mock",
+    "walkthrough": "node demo/render-walkthrough.mjs",
+    "package": "node package.mjs",
+    "site": "node build-site.mjs"
+  },
+  "engines": {
+    "node": ">=20.3"
+  }
+}

@@ -1,0 +1,1439 @@
+{
+ "kind": "argumentor-demo",
+ "version": 1,
+ "meta": {
+  "topicZh": "职场 AI 监控",
+  "topicEn": "AI monitoring at work",
+  "recordedAt": "2026-10-02",
+  "model": "deepseek-flash",
+  "promptVersion": "38bd27ec863f",
+  "appVersion": "4.0.0",
+  "rounds": 2,
+  "calls": 8,
+  "tokens": 28283,
+  "learnerNote": "The learner is simulated (role-played by an AI assistant). All agent outputs are real DeepSeek responses recorded during the session."
+ },
+ "narration": {
+  "frame": {
+   "zh": [
+    "演示学习者是一名英语专业二年级学生（由 AI 助手扮演），B2 水平，正在完成教师布置的“职场 AI 监控”议论文。",
+    "教师任务已锁定议题和读者，并附带三份可核查材料（S1–S3）。",
+    "下面的智能体输出全部录制自真实的 DeepSeek 运行，不是预先写好的台词。"
+   ],
+   "en": [
+    "The demo learner is a second-year English major (role-played by an AI assistant) at B2 level, writing the assigned essay on AI monitoring at work.",
+    "The teacher task locks the question and audience and supplies three checkable sources (S1–S3).",
+    "Every agent output below was recorded from a real DeepSeek run, not scripted in advance."
+   ]
+  },
+  "map": {
+   "zh": [
+    "学生最初把 S1 的原文记错为“flagged workers who helped their colleagues as lazy”。",
+    "程序逐词核对后标记为“引文未在材料中找到”，学生自行改正——这一步没有调用模型。"
+   ],
+   "en": [
+    "The learner first misquoted S1 as \"flagged workers who helped their colleagues as lazy\".",
+    "The software checked it word by word, marked it \"quote not found\", and the learner fixed it — with no model call involved."
+   ]
+  },
+  "coach": {
+   "zh": [
+    "第 1 轮：学生先自评“理由 2 缺少推理联系”，分析角色确认了这一判断，并进一步指出主张过宽。",
+    "对话是关键：在 S1 的三轮追问后，学生自己得出“真正的问题是没有人工复核的 AI 评分，而不是监控本身”。",
+    "这句话是学生写的，不是 AI 写的；系统只是不断追问。",
+    "切换到第 2 轮标签可以看到，新一轮反馈知道学生上一轮拒绝了哪条建议。"
+   ],
+   "en": [
+    "Round 1: the learner self-assessed \"Reason 2 has no warrant\"; the analyst agreed and added that the claim was overbroad.",
+    "The dialogue is where the work happens: after three turns on S1, the learner reached their own conclusion — \"the real problem is using AI scores without a human check, not monitoring itself\".",
+    "That sentence is the learner's, not the AI's. The system only kept asking.",
+    "Switch to the Round 2 tab to see that the next round knows which advice the learner declined."
+   ]
+  },
+  "revise": {
+   "zh": [
+    "每条修订重点都必须作出决定：采纳、调整、不采纳，或“还没看懂”。拒绝也要写明理由。",
+    "第 2 轮中学生拒绝了 R2，理由是限定句已经排除了安全提醒——系统尊重这个决定，不再重复劝说。",
+    "修订稿由学生自己完成；差异视图显示新增 271 词、删除 114 词。"
+   ],
+   "en": [
+    "Every priority needs a decision: accept, adapt, reject, or \"not sure what it means\". A rejection needs a reason too.",
+    "In round 2 the learner rejected R2, arguing the qualifier already excludes safety alerts — the system respects that and does not push again.",
+    "The learner writes the revision themselves; the diff view shows 271 words added and 114 removed."
+   ]
+  },
+  "reflect": {
+   "zh": [
+    "修订检查只描述“读者现在能看到什么”，不打分：第 1 轮两条重点均“已体现”，第 2 轮一条“部分体现”、一条“学生决定不采纳”。",
+    "AI 使用说明根据过程记录自动草拟，由学生确认后导出。",
+    "导出的记录带有校验码，教师可在“教师”页面汇总全班情况。"
+   ],
+   "en": [
+    "The revision check only describes what a reader can now see; it does not score. Round 1: both priorities visible. Round 2: one partly visible, one declined by the learner.",
+    "The AI-use statement is drafted from the process record and confirmed by the learner before export.",
+    "The exported record carries a checksum; teachers aggregate the class on the Teacher page."
+   ]
+  }
+ },
+ "state": {
+  "version": 4,
+  "lang": "zh",
+  "page": "coach",
+  "learnerCode": "DEMO-S01",
+  "task": {
+   "kind": "argumentor-task",
+   "version": 1,
+   "title": "Unit 5 · AI monitoring in the workplace",
+   "topic": "Should employers be allowed to use AI systems to monitor employees' work?",
+   "audience": "The management board and staff representatives of a mid-sized logistics company",
+   "lockTopic": true,
+   "instructions": "Write an argumentative essay of 300–450 words for the audience above. Take a clear position, support it with at least two reasons, and answer the strongest objection. Use the source pack for checkable evidence and cite sources as S1–S3.",
+   "requirements": [
+    "At least two reasons, each with evidence and a warrant",
+    "At least one counterargument with a response",
+    "Cite at least one source from the pack (S1–S3)",
+    "Disclose any AI use in your AI-use statement"
+   ],
+   "wordMin": 300,
+   "wordMax": 450,
+   "level": "B2",
+   "focus": [
+    "evidence",
+    "warrant",
+    "counterargument"
+   ],
+   "languageFocus": "stance",
+   "minDialogue": 2,
+   "aiUse": "argumentor-only",
+   "reflectionLanguage": "either",
+   "vocabulary": [
+    [
+     "employee monitoring",
+     "员工监控",
+     "Collecting information about how employees work."
+    ],
+    [
+     "algorithmic management",
+     "算法管理",
+     "Using software to assign, track or evaluate work."
+    ],
+    [
+     "productivity tracking",
+     "生产效率追踪",
+     "Measuring output, speed or activity."
+    ],
+    [
+     "proportionality",
+     "相称性原则",
+     "Monitoring should not go further than its purpose needs."
+    ],
+    [
+     "data minimisation",
+     "数据最小化",
+     "Collecting only the data that is necessary."
+    ],
+    [
+     "purpose limitation",
+     "目的限制",
+     "Data collected for one purpose should not be reused for unrelated purposes."
+    ],
+    [
+     "transparency",
+     "透明度",
+     "Employees know what is collected and why."
+    ],
+    [
+     "false positive",
+     "误判",
+     "A system wrongly flags normal behaviour as a problem."
+    ],
+    [
+     "human review",
+     "人工复核",
+     "A person checks an automated decision before action is taken."
+    ],
+    [
+     "workplace trust",
+     "职场信任",
+     "Confidence between employees and managers."
+    ]
+   ],
+   "sources": [
+    {
+     "id": "S1",
+     "title": "Case A: Idle-time scores at Northline Logistics",
+     "kind": "Teacher-written fictional case",
+     "text": "Northline Logistics introduced an AI system that records each warehouse worker's scanning speed and the time between tasks. Managers receive a daily idle-time score for every worker. In the first month, the system flagged workers who stopped to help a colleague as idle. After a staff meeting, the company changed the rule: scores are now reviewed by a supervisor before any action is taken, and workers can see their own data. Forklift accidents fell during the same period, which the safety manager links to the system's alerts about speeding vehicles."
+    },
+    {
+     "id": "S2",
+     "title": "Case B: Screenshot monitoring at a design studio",
+     "kind": "Teacher-written fictional case",
+     "text": "A small design studio installed software that takes a screenshot of each employee's screen every ten minutes and uses AI to label the activity as productive or unproductive. The software labelled time spent sketching on paper as unproductive because the screen did not change. Two senior designers said they felt treated like suspects and left the studio within six months. The owner said the data helped her bill clients more accurately."
+    },
+    {
+     "id": "S3",
+     "title": "Teacher's note: principles in data-protection rules",
+     "kind": "Teacher summary of general principles (not a legal text)",
+     "text": "Many data-protection frameworks, including the EU's General Data Protection Regulation, include principles such as purpose limitation (data collected for one purpose should not be reused for unrelated purposes) and data minimisation (collect only what is necessary). Workplace guidance in several countries also stresses transparency: employees should be told what is monitored and why. These principles do not ban monitoring; they set conditions on it."
+    }
+   ],
+   "teacherNote": "Cases A and B are fictional and were written for this unit. You may argue for or against workplace monitoring; both positions can be equally strong if they are well reasoned."
+  },
+  "data": {
+   "topic": "Should employers be allowed to use AI systems to monitor employees' work?",
+   "audience": "The management board and staff representatives of a mid-sized logistics company",
+   "claim": "Employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score and workers can see their own data.",
+   "qualifier": "This does not apply to safety alerts that warn workers about danger.",
+   "level": "B2",
+   "arguments": [
+    {
+     "reason": "Constant productivity tracking can make workers feel like suspects, and the company can lose experienced staff.",
+     "evidence": "In Case B, two senior designers \"felt treated like suspects and left the studio within six months\".",
+     "evidenceType": "study",
+     "source": "S2",
+     "warrant": "Losing experienced staff costs the company skills that are hard to replace, so constant tracking can harm the company as well as the workers."
+    },
+    {
+     "reason": "AI productivity scores can punish helpful behaviour.",
+     "evidence": "For example, in Case A the system \"flagged workers who stopped to help a colleague as idle\" in the first month.",
+     "evidenceType": "source",
+     "source": "S1",
+     "warrant": "If managers act on unchecked scores, workers may be punished for teamwork, so a human review is necessary before any decision."
+    }
+   ],
+   "counters": [
+    {
+     "target": "Claim",
+     "counter": "Some managers may argue that AI monitoring improves safety, for example by warning drivers who drive too fast.",
+     "strategy": "concede",
+     "response": "I accept that safety alerts are useful, but this does not justify tracking how hard each person works, because a safety alert protects workers while a productivity score judges them."
+    }
+   ],
+   "draft": "Many logistics companies now use AI systems to watch how their employees work. In my view, employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score and workers can see their own data. Some kinds of monitoring, such as safety alerts, can be accepted.\n\nFirstly, constant productivity tracking can make workers feel like suspects, and this can cost the company good staffs. In Case B, two senior designers \"felt treated like suspects and left the studio within six months\" (S2). For a company, losing experienced people means losing skills that are difficult to replace, so the board should care about this cost, not only about the data.\n\nSecondly, AI scores can misjudge normal and even helpful behaviour. In Case A, the system \"flagged workers who stopped to help a colleague as idle\" in the first month (S1). This example does not prove that AI is always wrong. However, it shows that a score can punish exactly the teamwork that a warehouse needs. If managers act on such scores without checking them, a worker may be punished for doing the right thing. This is why a human review is necessary before any decision.\n\nOf course, some managers will argue that AI monitoring improves safety. This is a fair point: in Case A, forklift accidents fell while the system warned about speeding vehicles. I accept that alerts which protect workers from danger are useful. But this does not justify tracking how hard each person works all day. The two uses have different purposes: a safety alert protects workers, while a productivity score judges them. Many data-protection rules also say that data collected for one purpose should not be reused for an unrelated purpose (S3).\n\nIn conclusion, board should keep AI tools that warn about danger, but it should not let AI scores judge individual workers without human review and transparency. This position protects both safety and trust."
+  },
+  "rounds": [
+   {
+    "id": 1,
+    "startedAt": "2026-10-02T11:36:22.630Z",
+    "input": {
+     "topic": "Should employers be allowed to use AI systems to monitor employees' work?",
+     "audience": "The management board and staff representatives of a mid-sized logistics company",
+     "claim": "Employers should not use AI systems to monitor their employees, because it is an invasion of privacy and it destroys the trust between workers and managers.",
+     "qualifier": "",
+     "draft": "Nowadays, more and more companies use AI systems to monitor their employees. As we all know, privacy is a basic right. In my opinion, employers should not use AI to monitor workers, because it is an invasion of privacy and it destroys trust.\n\nFirstly, AI monitoring makes workers feel like suspects. In Case B, two senior designers felt treated like suspects and they left the studio within six months. If good employees leave, company will lose talent and money.\n\nSecondly, AI systems often make mistakes. In Case A, the system thought workers who helped their colleagues were idle. This shows that AI cannot understand real work, so it is totally unfair to use it to judge people.\n\nSome managers may say that AI monitoring improves safety, for example it can warn drivers who drive too fast. However, safety is not more important than privacy, and there are other ways to keep workers safe.\n\nIn conclusion, AI monitoring does more harm than good. Companies should stop using it and trust their employees instead.",
+     "level": "B2",
+     "arguments": [
+      {
+       "reason": "AI monitoring makes workers feel like suspects, which damages their motivation.",
+       "evidence": "In Case B, two senior designers \"felt treated like suspects and left the studio within six months\".",
+       "evidenceType": "source",
+       "source": "S2",
+       "warrant": "If good employees leave, the company loses talent."
+      },
+      {
+       "reason": "AI systems often make mistakes about what counts as work.",
+       "evidence": "For example, in Case A the system \"flagged workers who stopped to help a colleague as idle\" in the first month.",
+       "evidenceType": "source",
+       "source": "S1",
+       "warrant": ""
+      }
+     ],
+     "counters": [
+      {
+       "target": "Claim",
+       "counter": "Some managers may argue that AI monitoring improves safety, for example by warning drivers who drive too fast.",
+       "strategy": "rebut",
+       "response": "But safety is not more important than privacy, and companies can use other methods to keep workers safe."
+      }
+     ]
+    },
+    "status": "complete",
+    "self": {
+     "element": "arguments.1.warrant",
+     "label": "Reason 2 warrant",
+     "reason": "I did not explain why one mistake in Case A means that AI monitoring is unfair in general.",
+     "question": "Is my response to the counterargument strong enough?"
+    },
+    "results": {
+     "analyst": {
+      "role": "analyst",
+      "focus": "Explain the missing warrant for Reason 2 so the evidence about one AI mistake clearly supports the claim that AI monitoring should not be used.",
+      "items": [
+       {
+        "id": "A1",
+        "criterion": "warrant",
+        "target": "Reason 2",
+        "anchor": "This shows that AI cannot understand real work, so it is totally unfair to use it to judge people",
+        "anchorField": "draft",
+        "text": "The warrant is missing. A sceptical manager would say one mistake in one case does not prove AI monitoring is unfair in general. You need to explain why this example shows the problem is serious enough to reject AI monitoring, not just fix it."
+       },
+       {
+        "id": "A2",
+        "criterion": "claim",
+        "target": "Claim",
+        "anchor": "Employers should not use AI systems to monitor their employees",
+        "anchorField": "claim",
+        "text": "The claim is overbroad. Your evidence shows one case where monitoring caused resignations and one case where it made mistakes, but the source pack also shows a case where monitoring reduced accidents. A sceptical reader would ask whether you mean all AI monitoring or only certain uses."
+       },
+       {
+        "id": "A3",
+        "criterion": "response",
+        "target": "Counterargument 1",
+        "anchor": "safety is not more important than privacy, and there are other ways to keep workers safe",
+        "anchorField": "draft",
+        "text": "The response states a priority but does not give a reason why privacy outweighs safety, and it does not name the other ways. A sceptical manager would want to know what those methods are and why they are better."
+       }
+      ],
+      "questions": [],
+      "frames": [],
+      "schemes": [
+       {
+        "target": "Reason 1",
+        "scheme": "consequence",
+        "note": "Uses Case B to show monitoring causes good staff to leave."
+       },
+       {
+        "target": "Reason 2",
+        "scheme": "example",
+        "note": "Uses one Case A example to show AI mistakes."
+       }
+      ],
+      "checks": {
+       "claim": {
+        "scope": "overbroad",
+        "answersTopic": "yes"
+       },
+       "reasons": [
+        {
+         "target": "Reason 1",
+         "evidenceStatus": "source",
+         "evidenceLink": "partly",
+         "claimLink": "missing"
+        },
+        {
+         "target": "Reason 2",
+         "evidenceStatus": "source",
+         "evidenceLink": "missing",
+         "claimLink": "missing"
+        }
+       ],
+       "counterarguments": [
+        {
+         "target": "Counterargument 1",
+         "fairness": "fair",
+         "responseType": "rebut"
+        }
+       ]
+      },
+      "strength": {
+       "target": "Reason 1",
+       "anchor": "If good employees leave, company will lose talent and money",
+       "anchorField": "draft",
+       "text": "You connect the evidence to a concrete consequence for the company. This shows you are thinking about why the audience should care."
+      },
+      "selfAssessment": {
+       "agreement": "agree",
+       "note": "You correctly identified the missing warrant for Reason 2 as the most important issue. Your question about the counterargument is also relevant, but the warrant comes first."
+      },
+      "priorities": [],
+      "tension": "",
+      "nextStep": "",
+      "guard": {
+       "repaired": false,
+       "regenerated": false,
+       "notes": []
+      },
+      "meta": {
+       "servedModel": "deepseek-flash",
+       "ms": 3327,
+       "tokens": 3724,
+       "calls": 1
+      }
+     },
+     "socratic": {
+      "role": "socratic",
+      "focus": "These questions will help you test whether your evidence about AI mistakes is strong enough to support your broad claim.",
+      "items": [],
+      "questions": [
+       {
+        "id": "S1",
+        "type": "evidence",
+        "target": "Reason 2",
+        "anchor": "This shows that AI cannot understand real work",
+        "anchorField": "draft",
+        "text": "What would a manager need to know about how common this kind of AI mistake is before accepting that it makes monitoring unfair?"
+       },
+       {
+        "id": "S2",
+        "type": "alternative",
+        "target": "Reason 2",
+        "anchor": "it is totally unfair to use it to judge people",
+        "anchorField": "draft",
+        "text": "If a company fixed the AI so it no longer flagged helpful workers, would your reason against monitoring still stand?"
+       },
+       {
+        "id": "S3",
+        "type": "tension",
+        "target": "Claim",
+        "anchor": "Employers should not use AI systems to monitor their employees",
+        "anchorField": "claim",
+        "text": "Your claim rejects all AI monitoring, yet your counterargument admits monitoring can warn drivers who drive too fast; how do these two positions fit together?"
+       }
+      ],
+      "frames": [],
+      "schemes": [],
+      "checks": null,
+      "strength": null,
+      "selfAssessment": null,
+      "priorities": [],
+      "tension": "",
+      "nextStep": "",
+      "guard": {
+       "repaired": false,
+       "regenerated": false,
+       "notes": []
+      },
+      "meta": {
+       "servedModel": "deepseek-flash",
+       "ms": 1621,
+       "tokens": 2824,
+       "calls": 1
+      }
+     },
+     "language": {
+      "role": "language",
+      "focus": "Stance: your boosters and shared-knowledge appeals are stronger than your evidence, which weakens your credibility with a sceptical management board.",
+      "items": [
+       {
+        "id": "L1",
+        "criterion": "stance",
+        "target": "Draft",
+        "anchor": "As we all know, privacy is a basic right",
+        "anchorField": "draft",
+        "text": "This appeal to shared knowledge asks the board to accept a contested value as obvious. A manager who weighs safety against privacy may resist rather than be persuaded. Marking this as your own position, or as a claim you will support, would keep the reader with you."
+       },
+       {
+        "id": "L2",
+        "criterion": "stance",
+        "target": "Reason 2",
+        "anchor": "so it is totally unfair to use it to judge people",
+        "anchorField": "draft",
+        "text": "The booster 'totally' is much stronger than one example from Case A can support. A sceptical reader will notice the gap and may dismiss the whole reason. A hedge would match the evidence you actually have."
+       }
+      ],
+      "questions": [],
+      "frames": [
+       {
+        "move": "mark a position",
+        "text": "In my view, … matters because …"
+       },
+       {
+        "move": "limit a claim",
+        "text": "This example suggests that …, at least in cases where …"
+       },
+       {
+        "move": "concede then weigh",
+        "text": "It is true that …, but … because …"
+       }
+      ],
+      "schemes": [],
+      "checks": null,
+      "strength": null,
+      "selfAssessment": null,
+      "priorities": [],
+      "tension": "",
+      "nextStep": "",
+      "guard": {
+       "repaired": false,
+       "regenerated": false,
+       "notes": []
+      },
+      "meta": {
+       "servedModel": "deepseek-flash",
+       "ms": 2727,
+       "tokens": 2975,
+       "calls": 1
+      }
+     },
+     "coordinator": {
+      "role": "coordinator",
+      "focus": "Your self-assessment points at the missing warrant for Reason 2, and the specialists agree; the second priority is the overbroad claim, which your own counterargument already strains.",
+      "items": [],
+      "questions": [],
+      "frames": [],
+      "schemes": [],
+      "checks": null,
+      "strength": null,
+      "selfAssessment": null,
+      "priorities": [
+       {
+        "id": "R1",
+        "target": "Reason 2",
+        "type": "argument",
+        "text": "Look at Reason 2: the Case A example and the sentence beginning 'This shows that AI cannot understand real work'. Examine whether one mistake shows monitoring is unfair in general, and what a manager would need to know about how common such mistakes are.",
+        "successCheck": "Does my warrant explain why this example justifies rejecting AI monitoring, not just fixing it?",
+        "basedOn": [
+         "A1",
+         "S1",
+         "L2"
+        ],
+        "fallback": false
+       },
+       {
+        "id": "R2",
+        "target": "Claim",
+        "type": "argument",
+        "text": "Compare your claim with your counterargument about warning drivers who drive too fast. Examine whether you mean all AI monitoring or only some uses, and decide what scope your evidence can actually support.",
+        "successCheck": "Does my claim's scope match the cases my evidence covers?",
+        "basedOn": [
+         "A2",
+         "S3"
+        ],
+        "fallback": false
+       }
+      ],
+      "tension": "The analyst wants a narrower claim, while your counterargument already concedes a use of monitoring; narrowing the claim would resolve both, but it changes the position you set out to defend.",
+      "nextStep": "Answer S1 first in the dialogue panel, then revise Reason 2's warrant and your claim's scope in Step 4.",
+      "guard": {
+       "repaired": false,
+       "regenerated": false,
+       "notes": []
+      },
+      "meta": {
+       "servedModel": "deepseek-flash",
+       "ms": 2636,
+       "tokens": 3319,
+       "calls": 1
+      }
+     }
+    },
+    "roleErrors": {},
+    "meta": {
+     "runId": "c3ca656d-18ec-47f5-9ea9-3a0330b10fab",
+     "model": "deepseek-flash",
+     "servedModel": "deepseek-flash",
+     "promptVersion": "38bd27ec863f",
+     "mode": "multi",
+     "provider": "DeepSeek",
+     "live": true,
+     "calls": 4,
+     "repairs": 0,
+     "tokens": 12842,
+     "ms": 8715,
+     "at": "2026-10-02T11:36:31.377Z",
+     "appVersion": "4.0.0",
+     "params": {
+      "temperature": 0.3,
+      "maxTokens": 1800,
+      "thinking": ""
+     },
+     "consent": {
+      "version": "2026-10-v1",
+      "at": "2026-10-02T11:36:14.230Z"
+     }
+    },
+    "dialogue": {
+     "S1": {
+      "kind": "question",
+      "closed": true,
+      "takeaway": "My claim should be about unchecked AI scoring and constant tracking, not about every kind of monitoring.",
+      "turns": [
+       {
+        "from": "learner",
+        "text": "I think the manager would need to know how often the system makes this mistake. In Case A it happened in the first month, but I don't know if it continued after the company changed the rule.",
+        "move": "",
+        "insight": "",
+        "at": "2026-10-02T11:36:52.449Z"
+       },
+       {
+        "from": "coach",
+        "text": "You say the manager needs to know how often the mistake happens. If the company fixed the rule after the first month, would that change whether monitoring is unfair? Explain how the fix affects your reason.",
+        "move": "probe",
+        "insight": "",
+        "at": "2026-10-02T11:36:52.449Z"
+       },
+       {
+        "from": "learner",
+        "text": "Hmm, after the fix a supervisor checks the score before any action, so one wrong flag would not punish a worker directly. Maybe the real problem is using AI scores without a human check, not monitoring itself. But workers could still feel watched all the time.",
+        "move": "",
+        "insight": "",
+        "at": "2026-10-02T11:37:02.546Z"
+       },
+       {
+        "from": "coach",
+        "text": "You noticed something important: \"the real problem is using AI scores without a human check, not monitoring itself.\" That is a sharper claim than your draft's. Your draft says employers should not monitor at all. Would you narrow your claim to unchecked AI scoring, or keep the wider one?",
+        "move": "acknowledge",
+        "insight": "the real problem is using AI scores without a human check, not monitoring itself",
+        "at": "2026-10-02T11:37:02.546Z"
+       },
+       {
+        "from": "learner",
+        "text": "I think I will narrow it. I still believe that constant AI tracking of every worker is wrong, but I can accept monitoring for safety if a person reviews the results and workers can see their own data.",
+        "move": "",
+        "insight": "",
+        "at": "2026-10-02T11:37:10.698Z"
+       },
+       {
+        "from": "coach",
+        "text": "You have worked out a narrower position: the problem is \"using AI scores without a human check, not monitoring itself.\" You also added two conditions: a person reviews results, and workers can see their own data. Carry these into your claim and your response to the safety counter. Check whether your Case A and Case B evidence still fits the narrower claim.",
+        "move": "close",
+        "insight": "the real problem is using AI scores without a human check, not monitoring itself",
+        "at": "2026-10-02T11:37:10.698Z"
+       }
+      ]
+     },
+     "S3": {
+      "kind": "question",
+      "closed": true,
+      "takeaway": "Safety alerts and productivity scores are different uses, so I should concede the first and argue against the second.",
+      "turns": [
+       {
+        "from": "learner",
+        "text": "They don't really fit together. I wrote the counterargument because the task asked for one, but I didn't think about how it changes my claim. Safety alerts are different from productivity scores, because they protect workers instead of judging them.",
+        "move": "",
+        "insight": "",
+        "at": "2026-10-02T11:37:26.100Z"
+       },
+       {
+        "from": "coach",
+        "text": "You said safety alerts \"protect workers instead of judging them.\" That is a real distinction. If you keep your claim as it stands, how would you answer a manager who says the driver-warning system is still AI monitoring?",
+        "move": "acknowledge",
+        "insight": "Safety alerts are different from productivity scores, because they protect workers instead of judging them",
+        "at": "2026-10-02T11:37:26.100Z"
+       },
+       {
+        "from": "learner",
+        "text": "I could not answer that manager if I keep my claim. So I will change my response: I will concede that safety alerts are useful, and then argue that this does not justify tracking productivity all the time.",
+        "move": "",
+        "insight": "",
+        "at": "2026-10-02T11:37:32.449Z"
+       },
+       {
+        "from": "coach",
+        "text": "You said you will \"concede that safety alerts are useful\" and then argue it \"does not justify tracking productivity all the time.\" That is a real shift in your position. If your claim now allows some AI monitoring, what exact line will you draw between the two uses?",
+        "move": "acknowledge",
+        "insight": "I will concede that safety alerts are useful, and then argue that this does not justify tracking productivity all the time",
+        "at": "2026-10-02T11:37:32.449Z"
+       },
+       {
+        "from": "learner",
+        "text": "The line is the purpose. Monitoring that warns workers about danger is acceptable, but AI that scores how hard each person works should not be used to judge people unless a person checks the score and workers can see it.",
+        "move": "",
+        "insight": "",
+        "at": "2026-10-02T11:38:56.755Z"
+       },
+       {
+        "from": "coach",
+        "text": "You have drawn your line by purpose: monitoring that warns workers about danger is acceptable, but AI that scores how hard each person works should not judge people unless a person checks the score and workers can see it. Carry that distinction into your claim and your response to the safety objection.",
+        "move": "close",
+        "insight": "The line is the purpose. Monitoring that warns workers about danger is acceptable, but AI that scores how hard each person works should not be used to judge people unless a person checks the score and workers can see it",
+        "at": "2026-10-02T11:38:56.755Z"
+       }
+      ]
+     },
+     "L2": {
+      "kind": "feedback",
+      "closed": false,
+      "takeaway": "",
+      "turns": [
+       {
+        "from": "learner",
+        "text": "I am not sure what a hedge is here. Do you mean that I should not give my opinion so strongly?",
+        "move": "",
+        "insight": "",
+        "at": "2026-10-02T11:39:06.702Z"
+       },
+       {
+        "from": "coach",
+        "text": "A hedge means softening a claim to fit your evidence. Your word \"totally\" says AI is always unfair, but Case A is only one example. Hedging is not hiding your opinion; it keeps it believable. Which part of Reason 2 could you soften to match one example?",
+        "move": "clarify",
+        "insight": "",
+        "at": "2026-10-02T11:39:06.702Z"
+       }
+      ]
+     }
+    },
+    "decisions": {
+     "R1": {
+      "decision": "accept",
+      "reason": "I will explain that unchecked scores can punish helpful workers, so the real problem is scoring without a human check.",
+      "at": "2026-10-02T11:39:37.984Z"
+     },
+     "R2": {
+      "decision": "adapt",
+      "reason": "I will narrow my claim to productivity scoring, but I will keep my position against constant tracking of every worker.",
+      "at": "2026-10-02T11:39:38.399Z"
+     },
+     "L1": {
+      "decision": "adapt",
+      "reason": "I will keep privacy as an important value, but I will present it as my own view, not as something everyone knows.",
+      "at": "2026-10-02T11:39:38.922Z"
+     },
+     "L2": {
+      "decision": "accept",
+      "reason": "I will remove \"totally\" because one example cannot prove that AI is always unfair.",
+      "at": "2026-10-02T11:39:39.342Z"
+     },
+     "A3": {
+      "decision": "adapt",
+      "reason": "I will concede that safety alerts are useful and then explain why productivity scores are different.",
+      "at": "2026-10-02T11:39:39.757Z"
+     }
+    },
+    "note": "",
+    "revised": "Many logistics companies now use AI systems to watch how their employees work. In my view, employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score and workers can see their own data. Some kinds of monitoring, such as safety alerts, can be accepted.\n\nFirstly, constant productivity tracking can make workers feel like suspects, and this can cost the company good staffs. In Case B, two senior designers \"felt treated like suspects and left the studio within six months\" (S2). For a company, losing experienced people means losing skills that are difficult to replace, so the board should care about this cost, not only about the data.\n\nSecondly, AI scores can misjudge normal and even helpful behaviour. In Case A, the system \"flagged workers who stopped to help a colleague as idle\" in the first month (S1). This example does not prove that AI is always wrong. However, it shows that a score can punish exactly the teamwork that a warehouse needs. If managers act on such scores without checking them, a worker may be punished for doing the right thing. This is why a human review is necessary before any decision.\n\nOf course, some managers will argue that AI monitoring improves safety. This is a fair point: in Case A, forklift accidents fell while the system warned about speeding vehicles. I accept that alerts which protect workers from danger are useful. But this does not justify tracking how hard each person works all day. The two uses have different purposes: a safety alert protects workers, while a productivity score judges them. Many data-protection rules also say that data collected for one purpose should not be reused for an unrelated purpose (S3).\n\nIn conclusion, board should keep AI tools that warn about danger, but it should not let AI scores judge individual workers without human review and transparency. This position protects both safety and trust.",
+    "revisions": [
+     {
+      "at": "2026-10-02T11:39:56.805Z",
+      "text": "Many logistics companies now use AI systems to watch how their employees work. In my view, employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score and workers can see their own data. Some kinds of monitoring, such as safety alerts, can be accepted.\n\nFirstly, constant productivity tracking can make workers feel like suspects, and this can cost the company good staffs. In Case B, two senior designers \"felt treated like suspects and left the studio within six months\" (S2). For a company, losing experienced people means losing skills that are difficult to replace, so the board should care about this cost, not only about the data.\n\nSecondly, AI scores can misjudge normal and even helpful behaviour. In Case A, the system \"flagged workers who stopped to help a colleague as idle\" in the first month (S1). This example does not prove that AI is always wrong. However, it shows that a score can punish exactly the teamwork that a warehouse needs. If managers act on such scores without checking them, a worker may be punished for doing the right thing. This is why a human review is necessary before any decision.\n\nOf course, some managers will argue that AI monitoring improves safety. This is a fair point: in Case A, forklift accidents fell while the system warned about speeding vehicles. I accept that alerts which protect workers from danger are useful. But this does not justify tracking how hard each person works all day. The two uses have different purposes: a safety alert protects workers, while a productivity score judges them. Many data-protection rules also say that data collected for one purpose should not be reused for an unrelated purpose (S3).\n\nIn conclusion, board should keep AI tools that warn about danger, but it should not let AI scores judge individual workers without human review and transparency. This position protects both safety and trust.",
+      "words": 329
+     }
+    ],
+    "check": {
+     "at": "2026-10-02T11:40:04.766Z",
+     "revised": "Many logistics companies now use AI systems to watch how their employees work. In my view, employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score and workers can see their own data. Some kinds of monitoring, such as safety alerts, can be accepted.\n\nFirstly, constant productivity tracking can make workers feel like suspects, and this can cost the company good staffs. In Case B, two senior designers \"felt treated like suspects and left the studio within six months\" (S2). For a company, losing experienced people means losing skills that are difficult to replace, so the board should care about this cost, not only about the data.\n\nSecondly, AI scores can misjudge normal and even helpful behaviour. In Case A, the system \"flagged workers who stopped to help a colleague as idle\" in the first month (S1). This example does not prove that AI is always wrong. However, it shows that a score can punish exactly the teamwork that a warehouse needs. If managers act on such scores without checking them, a worker may be punished for doing the right thing. This is why a human review is necessary before any decision.\n\nOf course, some managers will argue that AI monitoring improves safety. This is a fair point: in Case A, forklift accidents fell while the system warned about speeding vehicles. I accept that alerts which protect workers from danger are useful. But this does not justify tracking how hard each person works all day. The two uses have different purposes: a safety alert protects workers, while a productivity score judges them. Many data-protection rules also say that data collected for one purpose should not be reused for an unrelated purpose (S3).\n\nIn conclusion, board should keep AI tools that warn about danger, but it should not let AI scores judge individual workers without human review and transparency. This position protects both safety and trust.",
+     "meta": {
+      "servedModel": "deepseek-flash",
+      "promptVersion": "38bd27ec863f",
+      "tokens": 2267
+     },
+     "result": {
+      "focus": "The revision narrows the claim to unchecked AI productivity scoring, adds a human-review condition, and separates safety alerts from productivity tracking.",
+      "checks": [
+       {
+        "priorityId": "R1",
+        "status": "visible",
+        "anchor": "This example does not prove that AI is always wrong. However, it shows that a score can punish exactly the teamwork that a warehouse needs",
+        "note": "The revision limits what the Case A example shows and explains why acting on unchecked scores is the problem. The warrant now links the example to rejecting unchecked scoring rather than to fixing the tool."
+       },
+       {
+        "priorityId": "R2",
+        "status": "visible",
+        "anchor": "employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score",
+        "note": "The claim now names productivity scoring and adds a human-review condition. The safety-alert counterargument is conceded and distinguished by purpose, so the claim's scope matches the evidence used."
+       }
+      ],
+      "question": "In your next draft, how will you show that the human-review condition is realistic for a mid-sized logistics company?",
+      "guard": {
+       "repaired": false,
+       "notes": []
+      }
+     }
+    }
+   },
+   {
+    "id": 2,
+    "startedAt": "2026-10-02T11:40:27.091Z",
+    "input": {
+     "topic": "Should employers be allowed to use AI systems to monitor employees' work?",
+     "audience": "The management board and staff representatives of a mid-sized logistics company",
+     "claim": "Employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score and workers can see their own data.",
+     "qualifier": "This does not apply to safety alerts that warn workers about danger.",
+     "draft": "Many logistics companies now use AI systems to watch how their employees work. In my view, employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score and workers can see their own data. Some kinds of monitoring, such as safety alerts, can be accepted.\n\nFirstly, constant productivity tracking can make workers feel like suspects, and this can cost the company good staffs. In Case B, two senior designers \"felt treated like suspects and left the studio within six months\" (S2). For a company, losing experienced people means losing skills that are difficult to replace, so the board should care about this cost, not only about the data.\n\nSecondly, AI scores can misjudge normal and even helpful behaviour. In Case A, the system \"flagged workers who stopped to help a colleague as idle\" in the first month (S1). This example does not prove that AI is always wrong. However, it shows that a score can punish exactly the teamwork that a warehouse needs. If managers act on such scores without checking them, a worker may be punished for doing the right thing. This is why a human review is necessary before any decision.\n\nOf course, some managers will argue that AI monitoring improves safety. This is a fair point: in Case A, forklift accidents fell while the system warned about speeding vehicles. I accept that alerts which protect workers from danger are useful. But this does not justify tracking how hard each person works all day. The two uses have different purposes: a safety alert protects workers, while a productivity score judges them. Many data-protection rules also say that data collected for one purpose should not be reused for an unrelated purpose (S3).\n\nIn conclusion, board should keep AI tools that warn about danger, but it should not let AI scores judge individual workers without human review and transparency. This position protects both safety and trust.",
+     "level": "B2",
+     "arguments": [
+      {
+       "reason": "Constant productivity tracking can make workers feel like suspects, and the company can lose experienced staff.",
+       "evidence": "In Case B, two senior designers \"felt treated like suspects and left the studio within six months\".",
+       "evidenceType": "source",
+       "source": "S2",
+       "warrant": "Losing experienced staff costs the company skills that are hard to replace, so constant tracking can harm the company as well as the workers."
+      },
+      {
+       "reason": "AI productivity scores can punish helpful behaviour.",
+       "evidence": "For example, in Case A the system \"flagged workers who stopped to help a colleague as idle\" in the first month.",
+       "evidenceType": "source",
+       "source": "S1",
+       "warrant": "If managers act on unchecked scores, workers may be punished for teamwork, so a human review is necessary before any decision."
+      }
+     ],
+     "counters": [
+      {
+       "target": "Claim",
+       "counter": "Some managers may argue that AI monitoring improves safety, for example by warning drivers who drive too fast.",
+       "strategy": "concede",
+       "response": "I accept that safety alerts are useful, but this does not justify tracking how hard each person works, because a safety alert protects workers while a productivity score judges them."
+      }
+     ]
+    },
+    "status": "complete",
+    "self": {
+     "element": "arguments.0.warrant",
+     "label": "Reason 1 warrant",
+     "reason": "I am not sure the board will accept that two designers leaving a studio is a real cost for a logistics company.",
+     "question": "Is it a problem that Case B is about a design studio, not a logistics company?"
+    },
+    "results": {
+     "analyst": {
+      "role": "analyst",
+      "focus": "Reason 1 needs a warrant that connects a design-studio case to a logistics company, and the counterargument's concession needs to be reflected in the claim's scope.",
+      "items": [
+       {
+        "id": "A1",
+        "criterion": "warrant",
+        "target": "Reason 1",
+        "anchor": "felt treated like suspects and left the studio within six months",
+        "anchorField": "draft",
+        "text": "The warrant says losing experienced staff costs the company, but it does not explain why a design studio's loss applies to a logistics company. A sceptical board member would say designers and warehouse workers are different jobs, so this evidence does not show the same risk for us."
+       },
+       {
+        "id": "A2",
+        "criterion": "counterargument",
+        "target": "Counterargument 1",
+        "anchor": "I accept that safety alerts are useful, but this does not justify tracking how hard each person works",
+        "anchorField": "counters.0.response",
+        "text": "The concession is fair, but the claim still says employers should not use AI to score productivity unless a person reviews every score. A sceptical manager would ask whether the claim should also allow safety alerts without the same review, since the response separates the two uses."
+       },
+       {
+        "id": "A3",
+        "criterion": "evidence",
+        "target": "Reason 2",
+        "anchor": "This example does not prove that AI is always wrong",
+        "anchorField": "draft",
+        "text": "The learner correctly labels the limit of one example, but the reason still rests on a single case. A sceptical reader would want to know how common such mistakes are before accepting that human review is necessary for all scores."
+       }
+      ],
+      "questions": [],
+      "frames": [],
+      "schemes": [
+       {
+        "target": "Reason 1",
+        "scheme": "consequence",
+        "note": "Tracking causes staff to feel like suspects and leave, which costs the company."
+       },
+       {
+        "target": "Reason 2",
+        "scheme": "example",
+        "note": "One Case A example shows scores can punish helpful teamwork."
+       }
+      ],
+      "checks": {
+       "claim": {
+        "scope": "qualified",
+        "answersTopic": "yes"
+       },
+       "reasons": [
+        {
+         "target": "Reason 1",
+         "evidenceStatus": "source",
+         "evidenceLink": "partly",
+         "claimLink": "missing"
+        },
+        {
+         "target": "Reason 2",
+         "evidenceStatus": "source",
+         "evidenceLink": "explained",
+         "claimLink": "explained"
+        }
+       ],
+       "counterarguments": [
+        {
+         "target": "Counterargument 1",
+         "fairness": "fair",
+         "responseType": "concede"
+        }
+       ]
+      },
+      "strength": {
+       "target": "Counterargument 1",
+       "anchor": "The two uses have different purposes: a safety alert protects workers, while a productivity score judges them",
+       "anchorField": "draft",
+       "text": "This sentence draws a clear line between protecting and judging, which gives the concession a precise limit."
+      },
+      "selfAssessment": {
+       "agreement": "agree",
+       "note": "Your worry is the most important issue: the design-studio evidence needs a warrant that explains why it applies to a logistics company."
+      },
+      "priorities": [],
+      "tension": "",
+      "nextStep": "",
+      "guard": {
+       "repaired": false,
+       "regenerated": false,
+       "notes": []
+      },
+      "meta": {
+       "servedModel": "deepseek-flash",
+       "ms": 3363,
+       "tokens": 4396,
+       "calls": 1
+      }
+     },
+     "socratic": {
+      "role": "socratic",
+      "focus": "These questions will help you examine whether your Reason 1 evidence from a design studio can support a claim about a logistics company, and whether your claim's scope matches your concession.",
+      "items": [],
+      "questions": [
+       {
+        "id": "S1",
+        "type": "alternative",
+        "target": "Reason 1",
+        "anchor": "felt treated like suspects and left the studio within six months",
+        "anchorField": "draft",
+        "text": "What differences between design work and warehouse work might make a board member doubt that this studio evidence applies to their own staff?"
+       },
+       {
+        "id": "S2",
+        "type": "assumption",
+        "target": "Reason 1",
+        "anchor": "losing experienced people means losing skills that are difficult to replace",
+        "anchorField": "draft",
+        "text": "What would need to be true about warehouse workers for the loss of experienced staff to carry the same cost as in the design studio?"
+       },
+       {
+        "id": "S3",
+        "type": "tension",
+        "target": "Counterargument 1",
+        "anchor": "I accept that safety alerts are useful, but this does not justify tracking how hard each person works",
+        "anchorField": "counters.0.response",
+        "text": "Your claim requires human review of every score, yet you accept safety alerts without that condition; how do these two positions fit together?"
+       }
+      ],
+      "frames": [],
+      "schemes": [],
+      "checks": null,
+      "strength": null,
+      "selfAssessment": null,
+      "priorities": [],
+      "tension": "",
+      "nextStep": "",
+      "guard": {
+       "repaired": false,
+       "regenerated": false,
+       "notes": []
+      },
+      "meta": {
+       "servedModel": "deepseek-flash",
+       "ms": 1613,
+       "tokens": 3534,
+       "calls": 1
+      }
+     },
+     "language": {
+      "role": "language",
+      "focus": "In your draft, check how hedges and boosters match the strength of your evidence, and how reference words point to clear ideas.",
+      "items": [
+       {
+        "id": "L1",
+        "criterion": "stance",
+        "target": "Draft",
+        "anchor": "This example does not prove that AI is always wrong",
+        "anchorField": "draft",
+        "text": "You hedge the example, which is honest. But the next sentence boosts the point to a general rule about teamwork. A reader may ask what strength you really claim. Decide how far one case can carry your reason."
+       },
+       {
+        "id": "L2",
+        "criterion": "cohesion",
+        "target": "Draft",
+        "anchor": "This is why a human review is necessary before any decision",
+        "anchorField": "draft",
+        "text": "'This' could point to the flagging, the punishment, or the teamwork. A reader must guess which idea you mean. Name the idea so the link between your example and your recommendation is clear."
+       }
+      ],
+      "questions": [],
+      "frames": [],
+      "schemes": [],
+      "checks": null,
+      "strength": null,
+      "selfAssessment": null,
+      "priorities": [],
+      "tension": "",
+      "nextStep": "",
+      "guard": {
+       "repaired": false,
+       "regenerated": false,
+       "notes": []
+      },
+      "meta": {
+       "servedModel": "deepseek-flash",
+       "ms": 1309,
+       "tokens": 3543,
+       "calls": 1
+      }
+     },
+     "coordinator": {
+      "role": "coordinator",
+      "focus": "Your revision should make Reason 1's warrant carry across from the design studio to a logistics company, and make the claim's scope match your safety-alert concession.",
+      "items": [],
+      "questions": [],
+      "frames": [],
+      "schemes": [],
+      "checks": null,
+      "strength": null,
+      "selfAssessment": null,
+      "priorities": [
+       {
+        "id": "R1",
+        "target": "Reason 1",
+        "type": "argument",
+        "text": "Examine the warrant for Reason 1. The evidence comes from a design studio, but your audience runs a logistics company. Work out what must be true about warehouse staff for the same loss of experienced people to be a real cost for this board.",
+        "successCheck": "Does my warrant explain why this studio evidence applies to a logistics company?",
+        "basedOn": [
+         "A1",
+         "S1",
+         "S2"
+        ],
+        "fallback": false
+       },
+       {
+        "id": "R2",
+        "target": "Counterargument 1",
+        "type": "argument",
+        "text": "Compare your claim with your concession that safety alerts are useful. Your claim requires human review of every score, but you accept alerts without that condition. Examine whether the claim's wording should show that safety alerts fall outside its scope.",
+        "successCheck": "Does my claim's wording show exactly which AI uses the human-review rule covers?",
+        "basedOn": [
+         "A2",
+         "S3"
+        ],
+        "fallback": false
+       }
+      ],
+      "tension": "The analyst wants the claim's scope to match the safety-alert concession, while the language note asks you to fix how strongly one case carries Reason 2; the claim-scope work matters more for your board audience.",
+      "nextStep": "Answer S1 first in the dialogue panel, then revise Reason 1's warrant and your claim's scope in Step 4.",
+      "guard": {
+       "repaired": false,
+       "regenerated": false,
+       "notes": []
+      },
+      "meta": {
+       "servedModel": "deepseek-flash",
+       "ms": 1779,
+       "tokens": 3968,
+       "calls": 1
+      }
+     }
+    },
+    "roleErrors": {},
+    "meta": {
+     "runId": "a6d388ac-e008-4ba1-b149-4595d940a42e",
+     "model": "deepseek-flash",
+     "servedModel": "deepseek-flash",
+     "promptVersion": "38bd27ec863f",
+     "mode": "multi",
+     "provider": "DeepSeek",
+     "live": true,
+     "calls": 4,
+     "repairs": 0,
+     "tokens": 15441,
+     "ms": 6770,
+     "at": "2026-10-02T11:40:33.877Z",
+     "appVersion": "4.0.0",
+     "params": {
+      "temperature": 0.3,
+      "maxTokens": 1800,
+      "thinking": ""
+     },
+     "consent": {
+      "version": "2026-10-v1",
+      "at": "2026-10-02T11:36:14.230Z"
+     }
+    },
+    "dialogue": {
+     "S1": {
+      "kind": "question",
+      "closed": true,
+      "takeaway": "Case A is my main evidence for a logistics company; Case B only shows how being watched feels.",
+      "turns": [
+       {
+        "from": "learner",
+        "text": "Designers do creative work that is hard to measure, but warehouse work is easier to count, like scanning speed. So a board member could say that tracking is fair for warehouse workers even if it was unfair for designers.",
+        "move": "",
+        "insight": "",
+        "at": "2026-10-02T11:40:44.159Z"
+       },
+       {
+        "from": "coach",
+        "text": "You have named one difference: how measurable the work is. If a board member accepts that warehouse work is easier to count, what would you say in reply? Think about what counting still cannot show about a warehouse worker's day.",
+        "move": "probe",
+        "insight": "",
+        "at": "2026-10-02T11:40:44.159Z"
+       },
+       {
+        "from": "learner",
+        "text": "Counting cannot show helping a colleague or training a new worker, and Case A shows exactly that. So maybe I should use Case B only for the feeling of being a suspect, and use Case A as my main evidence for the cost to a logistics company.",
+        "move": "",
+        "insight": "",
+        "at": "2026-10-02T11:40:51.864Z"
+       },
+       {
+        "from": "coach",
+        "text": "You said you could \"use Case B only for the feeling of being a suspect\" and make Case A your main evidence. That is a real shift in your structure. If Case A carries the logistics argument, what does Case B still add that Case A cannot?",
+        "move": "acknowledge",
+        "insight": "use Case B only for the feeling of being a suspect, and use Case A as my main evidence",
+        "at": "2026-10-02T11:40:51.864Z"
+       }
+      ]
+     }
+    },
+    "decisions": {
+     "R1": {
+      "decision": "accept",
+      "reason": "I will make Case A my main evidence for the cost to the company and use Case B only for how workers feel.",
+      "at": "2026-10-02T11:41:11.183Z"
+     },
+     "R2": {
+      "decision": "reject",
+      "reason": "My qualifier already says that safety alerts are outside my claim, so I will keep the claim wording as it is.",
+      "at": "2026-10-02T11:41:11.597Z"
+     },
+     "L2": {
+      "decision": "accept",
+      "reason": "I will name the idea instead of starting with \"This\".",
+      "at": "2026-10-02T11:41:12.112Z"
+     }
+    },
+    "note": "",
+    "revised": "Many logistics companies now use AI systems to watch how their employees work. In my view, employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score and workers can see their own data. Some kinds of monitoring, such as safety alerts, can be accepted.\n\nFirstly, constant productivity tracking can make workers feel like suspects. In Case B, two senior designers \"felt treated like suspects and left the studio within six months\" (S2). A design studio is different from a warehouse, but the feeling of being watched does not depend on the type of job. For a logistics company, the bigger cost may be hidden: a productivity score cannot count helping a colleague or training a new worker, and these are the things that keep a warehouse running. Case A shows this clearly, as I explain below.\n\nSecondly, AI scores can misjudge normal and even helpful behaviour. In Case A, the system \"flagged workers who stopped to help a colleague as idle\" in the first month (S1). This example does not prove that AI is always wrong. However, it shows that a score can punish exactly the teamwork that a warehouse needs. If managers act on such scores without checking them, a worker may be punished for doing the right thing. Because a score cannot see the reason behind a pause, a human review is necessary before any decision.\n\nOf course, some managers will argue that AI monitoring improves safety. This is a fair point: in Case A, forklift accidents fell while the system warned about speeding vehicles. I accept that alerts which protect workers from danger are useful. But this does not justify tracking how hard each person works all day. The two uses have different purposes: a safety alert protects workers, while a productivity score judges them. Many data-protection rules also say that data collected for one purpose should not be reused for an unrelated purpose (S3).\n\nIn conclusion, board should keep AI tools that warn about danger, but it should not let AI scores judge individual workers without human review and transparency. This position protects both safety and trust.",
+    "revisions": [
+     {
+      "at": "2026-10-02T11:41:12.895Z",
+      "text": "Many logistics companies now use AI systems to watch how their employees work. In my view, employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score and workers can see their own data. Some kinds of monitoring, such as safety alerts, can be accepted.\n\nFirstly, constant productivity tracking can make workers feel like suspects. In Case B, two senior designers \"felt treated like suspects and left the studio within six months\" (S2). A design studio is different from a warehouse, but the feeling of being watched does not depend on the type of job. For a logistics company, the bigger cost may be hidden: a productivity score cannot count helping a colleague or training a new worker, and these are the things that keep a warehouse running. Case A shows this clearly, as I explain below.\n\nSecondly, AI scores can misjudge normal and even helpful behaviour. In Case A, the system \"flagged workers who stopped to help a colleague as idle\" in the first month (S1). This example does not prove that AI is always wrong. However, it shows that a score can punish exactly the teamwork that a warehouse needs. If managers act on such scores without checking them, a worker may be punished for doing the right thing. Because a score cannot see the reason behind a pause, a human review is necessary before any decision.\n\nOf course, some managers will argue that AI monitoring improves safety. This is a fair point: in Case A, forklift accidents fell while the system warned about speeding vehicles. I accept that alerts which protect workers from danger are useful. But this does not justify tracking how hard each person works all day. The two uses have different purposes: a safety alert protects workers, while a productivity score judges them. Many data-protection rules also say that data collected for one purpose should not be reused for an unrelated purpose (S3).\n\nIn conclusion, board should keep AI tools that warn about danger, but it should not let AI scores judge individual workers without human review and transparency. This position protects both safety and trust.",
+      "words": 365
+     }
+    ],
+    "check": {
+     "at": "2026-10-02T11:41:22.688Z",
+     "revised": "Many logistics companies now use AI systems to watch how their employees work. In my view, employers should not use AI to score the productivity of individual workers and judge them by these scores, unless a person reviews every score and workers can see their own data. Some kinds of monitoring, such as safety alerts, can be accepted.\n\nFirstly, constant productivity tracking can make workers feel like suspects. In Case B, two senior designers \"felt treated like suspects and left the studio within six months\" (S2). A design studio is different from a warehouse, but the feeling of being watched does not depend on the type of job. For a logistics company, the bigger cost may be hidden: a productivity score cannot count helping a colleague or training a new worker, and these are the things that keep a warehouse running. Case A shows this clearly, as I explain below.\n\nSecondly, AI scores can misjudge normal and even helpful behaviour. In Case A, the system \"flagged workers who stopped to help a colleague as idle\" in the first month (S1). This example does not prove that AI is always wrong. However, it shows that a score can punish exactly the teamwork that a warehouse needs. If managers act on such scores without checking them, a worker may be punished for doing the right thing. Because a score cannot see the reason behind a pause, a human review is necessary before any decision.\n\nOf course, some managers will argue that AI monitoring improves safety. This is a fair point: in Case A, forklift accidents fell while the system warned about speeding vehicles. I accept that alerts which protect workers from danger are useful. But this does not justify tracking how hard each person works all day. The two uses have different purposes: a safety alert protects workers, while a productivity score judges them. Many data-protection rules also say that data collected for one purpose should not be reused for an unrelated purpose (S3).\n\nIn conclusion, board should keep AI tools that warn about danger, but it should not let AI scores judge individual workers without human review and transparency. This position protects both safety and trust.",
+     "meta": {
+      "servedModel": "deepseek-flash",
+      "promptVersion": "38bd27ec863f",
+      "tokens": 2486
+     },
+     "result": {
+      "focus": "The revision adds a bridge from the design-studio evidence to warehouse work, while the claim wording and the safety-alert concession stay as they were.",
+      "checks": [
+       {
+        "priorityId": "R1",
+        "status": "partly",
+        "anchor": "A design studio is different from a warehouse, but the feeling of being watched does not depend on the type of job",
+        "note": "The gap between the studio evidence and a logistics company is now named and partly bridged. The warrant still does not state what must be true about warehouse staff for losing experienced people to be a real cost to this board."
+       },
+       {
+        "priorityId": "R2",
+        "status": "declined",
+        "anchor": "",
+        "note": "The learner rejected this priority, saying the qualifier already places safety alerts outside the claim. The claim wording and the concession are unchanged, so the scope is carried by the qualifier sentence alone."
+       }
+      ],
+      "question": "In your next draft, how will you show the board that losing experienced warehouse staff is a cost they should act on?",
+      "guard": {
+       "repaired": false,
+       "notes": []
+      }
+     }
+    }
+   }
+  ],
+  "current": 0,
+  "transfer": "Before I draft, I will check whether my counterargument changes the scope of my claim, and whether each source really matches my audience.",
+  "goalCheck": "",
+  "disclosure": "AI use statement: I used ArguMentor, an AI writing coach (model: deepseek-flash), for 2 round(s) of feedback on my argument map and draft. It asked me questions and pointed out issues; it did not write text for my essay. I wrote 9 reply/replies in dialogue with the coach and made 8 decision(s) about its feedback (accepted 4, adapted 3, rejected 1). All sentences in my final text are my own, and I can explain every change I made.",
+  "aiUse": {
+   "argumentor": true,
+   "languageTools": false,
+   "contentTools": false,
+   "otherTools": "",
+   "ownWords": false
+  },
+  "researchConsent": false,
+  "events": [
+   {
+    "t": "2026-10-02T11:35:19.532Z",
+    "type": "session-start",
+    "round": 0,
+    "detail": "4.0.0"
+   },
+   {
+    "t": "2026-10-02T11:35:34.490Z",
+    "type": "page",
+    "round": 0,
+    "detail": "teacher"
+   },
+   {
+    "t": "2026-10-02T11:35:46.571Z",
+    "type": "page",
+    "round": 0,
+    "detail": "map"
+   },
+   {
+    "t": "2026-10-02T11:35:47.614Z",
+    "type": "page",
+    "round": 0,
+    "detail": "frame"
+   },
+   {
+    "t": "2026-10-02T11:35:47.827Z",
+    "type": "page",
+    "round": 0,
+    "detail": "map"
+   },
+   {
+    "t": "2026-10-02T11:36:13.277Z",
+    "type": "page",
+    "round": 0,
+    "detail": "frame"
+   },
+   {
+    "t": "2026-10-02T11:36:13.489Z",
+    "type": "page",
+    "round": 0,
+    "detail": "map"
+   },
+   {
+    "t": "2026-10-02T11:36:13.804Z",
+    "type": "page",
+    "round": 0,
+    "detail": "coach"
+   },
+   {
+    "t": "2026-10-02T11:36:14.230Z",
+    "type": "consent",
+    "round": 0,
+    "detail": "2026-10-v1"
+   },
+   {
+    "t": "2026-10-02T11:36:22.630Z",
+    "type": "review-start",
+    "round": 0,
+    "detail": "round 1"
+   },
+   {
+    "t": "2026-10-02T11:36:31.383Z",
+    "type": "review",
+    "round": 1,
+    "detail": "complete · 4 calls · 12842 tokens"
+   },
+   {
+    "t": "2026-10-02T11:36:52.449Z",
+    "type": "dialogue",
+    "round": 1,
+    "detail": "S1 probe"
+   },
+   {
+    "t": "2026-10-02T11:37:02.546Z",
+    "type": "dialogue",
+    "round": 1,
+    "detail": "S1 acknowledge"
+   },
+   {
+    "t": "2026-10-02T11:37:10.698Z",
+    "type": "dialogue",
+    "round": 1,
+    "detail": "S1 close"
+   },
+   {
+    "t": "2026-10-02T11:37:26.100Z",
+    "type": "dialogue",
+    "round": 1,
+    "detail": "S3 acknowledge"
+   },
+   {
+    "t": "2026-10-02T11:37:32.449Z",
+    "type": "dialogue",
+    "round": 1,
+    "detail": "S3 acknowledge"
+   },
+   {
+    "t": "2026-10-02T11:38:56.755Z",
+    "type": "dialogue",
+    "round": 1,
+    "detail": "S3 close"
+   },
+   {
+    "t": "2026-10-02T11:39:06.702Z",
+    "type": "clarify",
+    "round": 1,
+    "detail": "L2 clarify"
+   },
+   {
+    "t": "2026-10-02T11:39:37.208Z",
+    "type": "page",
+    "round": 1,
+    "detail": "revise"
+   },
+   {
+    "t": "2026-10-02T11:39:37.721Z",
+    "type": "decision",
+    "round": 1,
+    "detail": "R1 accept"
+   },
+   {
+    "t": "2026-10-02T11:39:38.137Z",
+    "type": "decision",
+    "round": 1,
+    "detail": "R2 adapt"
+   },
+   {
+    "t": "2026-10-02T11:39:38.654Z",
+    "type": "decision",
+    "round": 1,
+    "detail": "L1 adapt"
+   },
+   {
+    "t": "2026-10-02T11:39:39.075Z",
+    "type": "decision",
+    "round": 1,
+    "detail": "L2 accept"
+   },
+   {
+    "t": "2026-10-02T11:39:39.494Z",
+    "type": "decision",
+    "round": 1,
+    "detail": "A3 adapt"
+   },
+   {
+    "t": "2026-10-02T11:39:56.806Z",
+    "type": "revision-save",
+    "round": 1,
+    "detail": "329 words"
+   },
+   {
+    "t": "2026-10-02T11:40:02.729Z",
+    "type": "page",
+    "round": 1,
+    "detail": "reflect"
+   },
+   {
+    "t": "2026-10-02T11:40:04.766Z",
+    "type": "check",
+    "round": 1,
+    "detail": "R1:visible R2:visible"
+   },
+   {
+    "t": "2026-10-02T11:40:17.616Z",
+    "type": "next-round",
+    "round": 1,
+    "detail": "from 1"
+   },
+   {
+    "t": "2026-10-02T11:40:17.617Z",
+    "type": "page",
+    "round": 1,
+    "detail": "map"
+   },
+   {
+    "t": "2026-10-02T11:40:18.343Z",
+    "type": "page",
+    "round": 1,
+    "detail": "frame"
+   },
+   {
+    "t": "2026-10-02T11:40:18.863Z",
+    "type": "page",
+    "round": 1,
+    "detail": "map"
+   },
+   {
+    "t": "2026-10-02T11:40:19.178Z",
+    "type": "page",
+    "round": 1,
+    "detail": "coach"
+   },
+   {
+    "t": "2026-10-02T11:40:27.091Z",
+    "type": "review-start",
+    "round": 1,
+    "detail": "round 2"
+   },
+   {
+    "t": "2026-10-02T11:40:33.879Z",
+    "type": "review",
+    "round": 2,
+    "detail": "complete · 4 calls · 15441 tokens"
+   },
+   {
+    "t": "2026-10-02T11:40:44.159Z",
+    "type": "dialogue",
+    "round": 2,
+    "detail": "S1 probe"
+   },
+   {
+    "t": "2026-10-02T11:40:51.864Z",
+    "type": "dialogue",
+    "round": 2,
+    "detail": "S1 acknowledge"
+   },
+   {
+    "t": "2026-10-02T11:41:09.180Z",
+    "type": "thread-finish",
+    "round": 2,
+    "detail": "S1"
+   },
+   {
+    "t": "2026-10-02T11:41:10.409Z",
+    "type": "skip-dialogue",
+    "round": 2,
+    "detail": "1/2"
+   },
+   {
+    "t": "2026-10-02T11:41:10.409Z",
+    "type": "page",
+    "round": 2,
+    "detail": "revise"
+   },
+   {
+    "t": "2026-10-02T11:41:10.922Z",
+    "type": "decision",
+    "round": 2,
+    "detail": "R1 accept"
+   },
+   {
+    "t": "2026-10-02T11:41:11.335Z",
+    "type": "decision",
+    "round": 2,
+    "detail": "R2 reject"
+   },
+   {
+    "t": "2026-10-02T11:41:11.850Z",
+    "type": "decision",
+    "round": 2,
+    "detail": "L2 accept"
+   },
+   {
+    "t": "2026-10-02T11:41:12.895Z",
+    "type": "revision-save",
+    "round": 2,
+    "detail": "365 words"
+   },
+   {
+    "t": "2026-10-02T11:41:20.440Z",
+    "type": "page",
+    "round": 2,
+    "detail": "reflect"
+   },
+   {
+    "t": "2026-10-02T11:41:22.689Z",
+    "type": "check",
+    "round": 2,
+    "detail": "R1:partly R2:declined"
+   },
+   {
+    "t": "2026-10-02T11:41:54.258Z",
+    "type": "export",
+    "round": 2,
+    "detail": "json"
+   },
+   {
+    "t": "2026-10-02T11:58:40.489Z",
+    "type": "page",
+    "round": 2,
+    "detail": "frame"
+   },
+   {
+    "t": "2026-10-02T12:10:57.460Z",
+    "type": "page",
+    "round": 2,
+    "detail": "map"
+   },
+   {
+    "t": "2026-10-02T12:47:15.861Z",
+    "type": "page",
+    "round": 2,
+    "detail": "coach"
+   }
+  ],
+  "createdAt": "2026-10-02T11:35:19.532Z",
+  "savedAt": "2026-10-02T12:47:16.162Z"
+ }
+}

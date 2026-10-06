@@ -1,0 +1,8 @@
+论证工坊 · ArguMentor
+Version 4.0.0  (2026-10-02)
+A multi-agent Socratic coach for English argumentative writing (EFL),
+with a software integrity guard, Socratic dialogue, a closing feedback
+loop, teacher tools and a built-in evaluation harness.
+
+Requires Node.js 20.3 or newer. No third-party dependencies.
+Full documentation: README.md / README.en.md and docs/

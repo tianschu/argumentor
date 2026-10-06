@@ -1,0 +1,27 @@
+# Cloudflare Workers configuration for the optional hosted ArguMentor back end.
+# Deploy:  cd worker && npx wrangler deploy
+# The API key is NEVER written here. Set it as a secret (see README.md in this folder):
+#   npx wrangler secret put DEEPSEEK_API_KEY
+
+name = "argumentor"
+main = "worker.mjs"
+compatibility_date = "2026-01-01"
+
+[vars]
+DEEPSEEK_MODEL = "deepseek-flash"
+# Only this origin may call the Worker from a browser. Set it to your GitHub Pages URL.
+ALLOWED_ORIGIN = "https://YOUR-USERNAME.github.io"
+# Hard daily ceilings on YOUR balance. The Worker refuses until the next UTC day once either is reached.
+MAX_DAILY_CALLS = "400"
+MAX_DAILY_TOKENS = "3000000"
+
+# Recommended. Without a KV namespace the daily counters live in per-isolate memory, so the real total
+# can exceed the cap when Cloudflare runs several isolates. Create one and paste its id here:
+#   npx wrangler kv namespace create ARGUMENTOR_KV
+# [[kv_namespaces]]
+# binding = "ARGUMENTOR_KV"
+# id = "paste-the-id-wrangler-prints"
+
+# Secrets (never in this file, never in git):
+#   npx wrangler secret put DEEPSEEK_API_KEY
+#   npx wrangler secret put ACCESS_CODE
