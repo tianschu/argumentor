@@ -1,4 +1,4 @@
-# Hosted back end (optional)
+#  Hosted back end (optional)
 
 This folder makes the public site give **real AI feedback on your DeepSeek balance** without putting your
 key anywhere a visitor can read it. Skip it entirely if you are happy with the demo-and-offline site.
@@ -25,6 +25,14 @@ npx wrangler kv namespace create ARGUMENTOR_KV    # recommended; see "Caps" belo
 
 Paste the printed id into `wrangler.toml` (uncomment the `[[kv_namespaces]]` block), set
 `ALLOWED_ORIGIN` to your site's URL, then:
+
+Check the config first (reads the local file only, contacts nothing):
+
+```bash
+node preflight.mjs
+```
+
+Then:
 
 ```bash
 npx wrangler secret put DEEPSEEK_API_KEY   # paste at the prompt; it is not echoed or stored locally

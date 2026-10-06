@@ -3,6 +3,7 @@
 An **English argumentative-writing coach** for Chinese university English majors. Learners build an argument in English, **answer the agents' questions**, revise it themselves, and the system then checks what a reader can actually see in the revision. Four DeepSeek agents divide the feedback work, and every output passes a **software integrity guard**.
 
 > 中文版本：[README.md](README.md)
+> Step-by-step publishing guide: [DEPLOY.md](DEPLOY.md)
 
 ---
 

@@ -3,6 +3,7 @@
 面向高校英语专业学习者的**英语论证写作教练**。学生用英语构建论证、**回答智能体的追问**、自主修订，系统再检查修订是否被读者看见。四个 DeepSeek 智能体分工提供反馈，每一条输出都经过**程序化诚信守门**。
 
 > English version: [README.en.md](README.en.md)
+> 部署到 GitHub Pages / Cloudflare 的分步指南：[DEPLOY.md](DEPLOY.md)
 
 ---
 
