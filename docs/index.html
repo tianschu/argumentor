@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#164c45">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://argumentor.YOUR-SUBDOMAIN.workers.dev; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta name="description" content="ArguMentor 论证工坊: a multi-agent Socratic coach for English argumentative writing. Demo and offline mode; no API key required.">
   <title>论证工坊 · ArguMentor</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
@@ -18,7 +18,7 @@
 </head>
 <body>
   <a class="skip" href="#workspace">跳转到工作区 / Skip to workspace</a>
-  <div class="site-note"><strong>这是公开演示站：可回放真实录制的 DeepSeek 会话，也可用离线模板模式走完整流程（不调用任何 AI，不需要密钥）。</strong><span>Public demo build: replay the recorded DeepSeek session, or walk the full workflow in offline template mode. No AI call is made and no API key is needed. For live feedback, download the release and run it with your own key.</span></div>
+  
   <div id="app"><noscript>论证工坊需要启用 JavaScript。/ ArguMentor needs JavaScript.</noscript></div>
   <div id="toast" role="status" aria-live="polite"></div>
   <div id="live" class="sr-only" aria-live="polite"></div>
