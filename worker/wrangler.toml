@@ -10,17 +10,17 @@ compatibility_date = "2026-01-01"
 [vars]
 DEEPSEEK_MODEL = "deepseek-flash"
 # Only this origin may call the Worker from a browser. Set it to your GitHub Pages URL.
-ALLOWED_ORIGIN = "https://YOUR-USERNAME.github.io"
+ALLOWED_ORIGIN = "https://tianschu.github.io"
 # Hard daily ceilings on YOUR balance. The Worker refuses until the next UTC day once either is reached.
-MAX_DAILY_CALLS = "400"
-MAX_DAILY_TOKENS = "3000000"
+MAX_DAILY_CALLS = "10000"
+MAX_DAILY_TOKENS = "10000000000"
 
 # Recommended. Without a KV namespace the daily counters live in per-isolate memory, so the real total
 # can exceed the cap when Cloudflare runs several isolates. Create one and paste its id here:
 #   npx wrangler kv namespace create ARGUMENTOR_KV
-# [[kv_namespaces]]
-# binding = "ARGUMENTOR_KV"
-# id = "paste-the-id-wrangler-prints"
+[[kv_namespaces]]
+binding = "ARGUMENTOR_KV"
+id = "6713cf9196744b689b877018fb863b4e"
 
 # Secrets (never in this file, never in git):
 #   npx wrangler secret put DEEPSEEK_API_KEY

@@ -1,2 +1,2 @@
-// Hosted build: requests go to the proxy, which holds the API key as a platform secret.
-globalThis.ARGUMENTOR_API = "https://argumentor.argumentor.workers.dev";
+// Offline build: no back end. The pipeline runs in this browser against the template provider.
+globalThis.ARGUMENTOR_OFFLINE = true;
