@@ -31,7 +31,8 @@ function indexHtml() {
   const csp = [
     "default-src 'self'", "script-src 'self'", "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data:", `connect-src 'self'${API ? ` ${API}` : ''}`,
-    "frame-ancestors 'none'", "base-uri 'none'", "form-action 'none'", "object-src 'none'"
+    // frame-ancestors is ignored in a <meta> CSP (header-only), so it is left out rather than logged as an error.
+    "base-uri 'none'", "form-action 'none'", "object-src 'none'"
   ].join('; ');
   return `<!doctype html>
 <html lang="zh-CN">
@@ -60,7 +61,8 @@ function indexHtml() {
   <div id="toast" role="status" aria-live="polite"></div>
   <div id="live" class="sr-only" aria-live="polite"></div>
   <dialog class="dialog" id="dialog" aria-label="ArguMentor"></dialog>
-  ${API ? `<script>window.ARGUMENTOR_API = ${JSON.stringify(API)};</script>` : '<!-- No back end configured: the pipeline runs in the browser against the offline template provider. -->'}
+  <!-- An external module, not an inline script, so the page's own script-src 'self' policy holds. -->
+  <script type="module" src="./config.mjs"></script>
   <script type="module" src="./app.mjs"></script>
 </body>
 </html>
@@ -86,12 +88,17 @@ await mkdir(join(OUT, 'demo'), { recursive: true });
 for (const file of [...MODULES, ...ASSETS]) await cp(join(ROOT, file), join(OUT, file));
 for (const file of ['workplace-ai-monitoring.json', 'task-workplace-ai.json']) await cp(join(ROOT, 'demo', file), join(OUT, 'demo', file));
 await writeFile(join(OUT, 'index.html'), indexHtml());
+// Deployment configuration as a module file. It carries no secret: either a public proxy URL, or a flag
+// saying there is no back end at all, so api.mjs skips probing an endpoint it knows is absent.
+await writeFile(join(OUT, 'config.mjs'), API
+  ? `// Hosted build: requests go to the proxy, which holds the API key as a platform secret.\nglobalThis.ARGUMENTOR_API = ${JSON.stringify(API)};\n`
+  : '// Offline build: no back end. The pipeline runs in this browser against the template provider.\nglobalThis.ARGUMENTOR_OFFLINE = true;\n');
 await writeFile(join(OUT, 'README.md'), README);
 await writeFile(join(OUT, '.nojekyll'), ''); // GitHub Pages: serve files as-is
 
 // A build that shipped a key would be a catastrophe, so fail loudly rather than quietly.
 const SECRET = /\bsk-[A-Za-z0-9]{20,}\b/;
-for (const file of [...MODULES, 'index.html']) {
+for (const file of [...MODULES, 'index.html', 'config.mjs']) {
   if (SECRET.test(await readFile(join(OUT, file), 'utf8'))) throw new Error(`Refusing to build: ${file} looks like it contains an API key.`);
 }
 

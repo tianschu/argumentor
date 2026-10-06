@@ -8,11 +8,15 @@
 //                   offline template provider (engine.mjs). No key, no network, clearly labelled in the UI.
 // The key is never in the page in any of them.
 const CODE_KEY = 'argumentor-access-code';
-const BASE = String(globalThis.ARGUMENTOR_API || '').replace(/\/+$/, '');
-const url = path => `${BASE}${path}`;
+const base = () => String(globalThis.ARGUMENTOR_API || '').replace(/\/+$/, '');
+const url = path => `${base()}${path}`;
 
-// Set once by status(): null until probed, then the engine module in offline mode, or false when a server answered.
+// Set once by status(): null until probed, then the engine module in offline mode, or false when a server
+// answered. The static build sets ARGUMENTOR_OFFLINE so it never probes an endpoint it knows is absent —
+// otherwise every page load would log a 404 that looks like a fault but is not.
 let engine = null;
+// Read lazily, not at module-evaluation time, so it does not depend on script execution order.
+const offline = () => Boolean(globalThis.ARGUMENTOR_OFFLINE) && !base();
 const useEngine = async () => { if (!engine) engine = await import('./engine.mjs'); return engine; };
 
 export function accessCode() {
@@ -39,6 +43,7 @@ async function failure(response) {
 // Probes for a back end once. If nothing answers, every later call runs in the browser instead.
 export async function status() {
   if (engine) return engine.status();
+  if (offline()) return (await useEngine()).status();
   try {
     const response = await fetch(url('/api/status'), { signal: AbortSignal.timeout(4000) });
     if (!response.ok) throw await failure(response);
